@@ -88,15 +88,15 @@ Local Ltac unfold_rest :=
 Local Ltac destruct_solve :=
   destruct_avars; unfold_rest; auto; try var_notin.
 
-Local Ltac avar_solver :=
+Ltac avar_solver :=
   avar_unfold; destruct_solve.
 
-Local Ltac avar_fun_ext_solver :=
+Ltac avar_fun_ext_solver :=
   avar_unfold;
   apply fun_ext_dep; intros a;
   destruct_solve.
 
-Local Ltac avar_fun_ext_2_solver :=
+Ltac avar_fun_ext_2_solver :=
   avar_unfold;
   apply fun_ext_dep; intros a;
   apply fun_ext_dep; intros m;
